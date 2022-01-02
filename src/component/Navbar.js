@@ -32,7 +32,6 @@ const useStyles = makeStyles(theme => ({
 
 const Header = props => {
   const navigate = useNavigate();
-  const { history } = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -66,8 +65,8 @@ const Header = props => {
       pageURL: "/about"
     },
     {
-        menuTitle: "Products",
-        pageURL: "/products"
+        menuTitle: "Projects",
+        pageURL: "/projects"
     }
   ];
 
@@ -130,9 +129,9 @@ const Header = props => {
             </Button>
             <Button
                 variant="contained"
-                onClick={() => handleButtonClick("/products")}
+                onClick={() => handleButtonClick("/projects")}
               >
-                PRODUCTS
+                PROJECTS
               </Button>
               <Button
                 variant="contained"

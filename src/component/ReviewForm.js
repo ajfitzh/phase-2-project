@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React from "react";
 
 function ReviewForm({ onAddReview }) {
   
@@ -8,7 +8,6 @@ function handleSubmit(e) {
   const itemData = {
     text: e.target.name.value,
     }
-  console.log(itemData);
   fetch("https://boiling-falls-26905.herokuapp.com/reviews", {
     method: "POST",
     headers: {
@@ -23,7 +22,7 @@ function handleSubmit(e) {
   
   return (
     <div className="new-review-form">
-      <h2>Add Your Own Review!</h2>
+      <h2>Add Your Own!</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Add Review" />
         <button type="submit">Add Review</button>
