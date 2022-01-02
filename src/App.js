@@ -13,7 +13,7 @@ function App() {
   const [items, setItems] = useState([])
 
   useEffect(()=>{
-    fetch("https://boiling-falls-26905.herokuapp.com/toys")
+    fetch("https://boiling-falls-26905.herokuapp.com/items")
     .then((r) => r.json())
     .then((items) => setItems(items))
   }, []);
