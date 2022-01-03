@@ -1,16 +1,30 @@
 import React from 'react'
 import Project from "./Project"
-
-const Projects = props => {
+import { Grid } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
   
+const useStyles = makeStyles({
+      gridContainer: {
+          paddingLeft: '10px',
+          paddingRight: '10px'
+      }
+  })
+  
+const Projects = props => {
+const classes = useStyles();
+
   return (
-        <div>
-            <Project />
-            <div class="facebook link">
-                Check out my Facebook Marketplace for current listings! <br></br>
-            <a href="https://www.facebook.com/marketplace/profile/100044500240787/?ref=permalink"> Mike's Bikes </a>
-        </div>
-        </div>    
+        <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={4}>
+                <Project />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+                <Project />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+                <Project />
+            </Grid>
+        </Grid>
     )
 }
 
