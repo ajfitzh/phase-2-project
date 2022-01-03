@@ -10,6 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useNavigate } from "react-router-dom";
+import logo from "./assets/logo.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -74,8 +75,9 @@ const Header = props => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Mike's Bikes 757
+          <img height="50vw" width="50vw" src={logo} />
+          <Typography variant="h8" className={classes.title}>
+            
           </Typography>
           {isMobile ? (
             <>

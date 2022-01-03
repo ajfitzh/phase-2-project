@@ -8,8 +8,8 @@ const onSelect = item => {
     setSelected(item);
   }
     const mapStyles = {
-        height: "50vh",
-        width: "40%"
+        height: "40vh",
+        width: "100%"
     };
 
     const defaultCenter = {

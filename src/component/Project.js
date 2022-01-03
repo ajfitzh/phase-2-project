@@ -1,8 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
-import Honda1 from "./honda500/pic1.jpg"
-import Honda2 from "./honda500/finishedHonda500.jpg"
 
 function Project(props)
 {
@@ -10,7 +8,7 @@ function Project(props)
         {
             name: "Honda 500",
             description: "When I first picked it up...",
-            image: "http://1.bp.blogspot.com/_cWSXSVopMnk/S9A8OJOqGsI/AAAAAAAACBM/reg8EzA92h4/s1600/Rusty+Crusty+Bike.jpg"
+            image: "https://scontent-iad3-2.xx.fbcdn.net/v/t45.5328-4/s960x960/250375699_4108903672549689_2110060159811949835_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=c48759&_nc_ohc=X6xPUIc0XNoAX_rC-tg&tn=bBofImXvv_8LeHCO&_nc_ht=scontent-iad3-2.xx&oh=00_AT-QFo5kX7ZTciunaCXCj_2oLKY5j0bwgSDacnkZDvHCaQ&oe=61D7FDAF"
         },
         {
             name: "Honda 500",
@@ -34,7 +32,7 @@ function Item(props)
         <Paper elevation={2} >
             <h2>{props.item.name}</h2>
             <p>{props.item.description}</p>
-            <img height="300vw" width="500vw" src={props.item.image} />
+            <img src={props.item.image} />
         </Paper>
     )
 }

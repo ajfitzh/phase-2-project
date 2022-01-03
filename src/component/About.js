@@ -1,7 +1,8 @@
 import React, {useState, useEffect } from 'react'
 import ReviewForm from "./ReviewForm"
 import Review from "./Review"
-
+import mikedog from "./assets/mikedog.png"
+import "./About.css"
 const About = props => {
     const [reviews, setReviews] = useState([])
   
@@ -16,11 +17,13 @@ const About = props => {
       }
     return (
         <div>
+            
            <h1>Our Story</h1>
            <h2> What Our Customers Say</h2>
            {reviews.map(review => <Review key={review.id} text={review.text}/>)} 
             <ReviewForm onAddReview={onAddReview}/>
-        </div>
+            <br></br>
+        <div class="picture"> <img src={mikedog} /> </div></div>
     )
 }
 
