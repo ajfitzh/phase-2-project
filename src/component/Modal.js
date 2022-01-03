@@ -14,24 +14,24 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: 'When I picked her up, she was in rough shape.',
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.partzilla.com%2Fblog%2Fhow-to-prevent-motorcycle-rust&psig=AOvVaw0mfi7Ulk9Lv8skQc6Pac-z&ust=1641323262816000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDF1-KjlvUCFQAAAAAdAAAAABAD',
   },
   {
-    label: 'Bird',
+    label: 'I had to use my custom-built Chrome-in-ator',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://www.deltatechnicalcollege.com/wp-content/uploads/2018/03/DSC_0336_1.jpg',
   },
   {
-    label: 'Bali, Indonesia',
+    label: 'Added some elbow grease...',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+      'https://thumbs.dreamstime.com/z/construction-workers-working-hard-28098648.jpg',
   },
   {
-    label: 'Goč, Serbia',
+    label: 'Now it looks pretty good!',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      'http://media.techeblog.com/images/concept-motorcycle.jpg',
   },
 ];
 
