@@ -16,7 +16,7 @@ const images = [
   {
     label: 'When I picked her up, she was in rough shape.',
     imgPath:
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.partzilla.com%2Fblog%2Fhow-to-prevent-motorcycle-rust&psig=AOvVaw0mfi7Ulk9Lv8skQc6Pac-z&ust=1641323262816000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDF1-KjlvUCFQAAAAAdAAAAABAD',
+      'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/rusted-harley-davidson-motorcycle-art-spectrum.jpg',
   },
   {
     label: 'I had to use my custom-built Chrome-in-ator',
