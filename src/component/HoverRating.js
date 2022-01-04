@@ -34,28 +34,30 @@ export default function HoverRating({onAddReview}) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    let textstuff = reviewText;
+    let starvalue = value;
     const itemData = {
       name: "You",
       imageURL:"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetdrawings.com%2Fimages%2Fmotorbike-drawing-outline-18.jpg&f=1&nofb=1",
-      text: {reviewText},
-      stars: {value}
+      text: textstuff,
+      stars: starvalue
       }
       console.log(itemData)
-  //   fetch("https://boiling-falls-26905.herokuapp.com/reviews", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(itemData),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((newItem) => onAddReview(newItem));
+    fetch("https://boiling-falls-26905.herokuapp.com/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    })
+      .then((r) => r.json())
+      .then((newItem) => onAddReview(newItem));
   }
 
   return (
     <Card align="center">
       <Typography>Worked with Mike? Submit a Review!</Typography>
-      <TextField value={reviewText} onChange={e => setReviewText(e.target.value)} id="standard-basic" label="Type here..." variant="standard" />
+      <TextField onChange={e => setReviewText(e.target.value)} id="standard-basic" label="Type here..." variant="standard" />
     <Box
       sx={{
         width: 200,
