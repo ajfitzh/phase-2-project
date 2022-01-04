@@ -13,20 +13,30 @@ import Avatar from '@mui/material/Avatar';
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
+import { Grid } from "@material-ui/core"
 
-const Review = ({ text }) => {
+
+
+
+const Review = ({ review }) => {
     return (
-        <Card sx={{ maxWidth: 400 }}>
-            <CardHeader>
-                Customer A.
-                
-            </CardHeader>
-            <Rating readOnly precision={0.5} defaultValue={5} />
+        <Grid item xs={12} sm={6} md={4}>
+            <Card alignItems="center" sx={{ maxWidth: 400 }}>
+            <CardContent>
+            <Avatar 
+                style={{ marginRight: "14px" }}
+                alt="C. Ustomer" 
+                srcSet={review.imageURL} 
+                sx={{ width: 56, height: 56 }}
+                />
+            <Rating readOnly precision={0.5} defaultValue={review.stars} />
             <Typography>
-                {text}
+                {review.text}
             </Typography>
-            <Avatar style={{ justifyContent: "flex-end", display: "flex" }} align="center" alt="C. Ustomer" srcSet={CaitlinImage} sx={{ width: 56, height: 56 }}/>
+                <Typography variant="body2">{review.name}</Typography>
+        </CardContent>
         </Card>
+        </Grid>
     )
 }
 

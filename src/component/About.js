@@ -26,11 +26,11 @@ const useStyles = makeStyles({
 
 var items = [
     {
-        name: "Random Name #1",
+        name: "Garage",
         imageURL: "https://www.familyhandyman.com/wp-content/uploads/2017/06/FH06SEP_MOTORC_01-2.jpg"
     },
     {
-        name: "Random Name #2",
+        name: "At a convention!",
         imageURL: "http://ridermagazine.com/wp-content/uploads/2018/07/LEADIMG_3598.jpg"
     }
 ]
@@ -60,8 +60,6 @@ const About = props => {
 }
     return (
         <div>
-            
-            <Typography align="center" gutterBottom variant="h4">Our Story</Typography>
            <Card align="center">
                 <Carousel>
                     {
@@ -69,14 +67,14 @@ const About = props => {
                     }
                 </Carousel>
                <div className="font-link">
-               <h1> Founded in 2021, built upon decades of experience <br></br> and a brand-new workshop.<br></br> We guarantee <br></br> craftsmanship, attention to detail, and innovation. <br></br>
-                 -Mike M.
+               <h1> Founded in 2021, built upon decades of experience <br></br> We guarantee <br></br> craftsmanship, attention to detail, and innovation. <br></br>
+                 -Mike
                 </h1>
                 </div>
             </Card>
             <Typography align="center" gutterBottom variant="h2">Our Customer Stories</Typography>
-           <Grid container justifyContent="center" container spacing={12} row spacing={12}>
-           {reviews.map(review => <Review key={review.id} text={review.text}/>)} 
+           <Grid container container spacing={2}>
+           {reviews.map(review => <Review key={review.id} review={review}/>)} 
             </Grid>
             <ReviewForm onAddReview={onAddReview}/>
         </div>    
