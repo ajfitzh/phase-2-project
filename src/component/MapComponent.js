@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import Typography from "@material-ui/core/Typography";
+import { textAlign } from '@mui/system';
 
 function MapContainer() {
 const [selected, setSelected ] = useState({})
@@ -8,7 +10,7 @@ const onSelect = item => {
     setSelected(item);
   }
     const mapStyles = {
-        height: "40vh",
+        height: "30vh",
         width: "100%"
     };
 
@@ -24,14 +26,7 @@ const onSelect = item => {
         location: {
             lat: 36.877939, lng: -76.147505
             },
-        },
-        {
-          name: "Random Location 2",
-          location: { 
-            lat: 41.3917,
-            lng: 2.1649
-          },
-        },
+        }
 ];
 
     return (
@@ -39,7 +34,7 @@ const onSelect = item => {
             googleMapsApiKey='AIzaSyD4gA79P9ktv22eddp_M93LCTZXp5_5N8A'>
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={10}
+          zoom={9}
           center={defaultCenter}>
          {
             locations.map(item => {

@@ -6,8 +6,8 @@ import "./projects.css"
   
 const useStyles = makeStyles({
       gridContainer: {
-          paddingLeft: '10px',
-          paddingRight: '10px'
+          paddingLeft: '20px',
+          paddingRight: '20px',
       }
   })
   

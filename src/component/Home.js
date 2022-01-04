@@ -1,12 +1,33 @@
 import React from "react";
-import Modal from "./Modal"
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import MikeImage from "./assets/mikewife.jpg"
+
+
+
+
 
 const Home = props => {
-  return <div>           <p>Hi, I'm Mike.<br></br> I run a Bike Restoration Shop in Virginia Beach. </p>
-  <img alt="Mike with Wife" width="300" height="300" src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/257629254_436181924541812_6286573123512835835_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Qgt7eqr8VD0AX_XrLZu&_nc_ht=scontent-iad3-2.xx&oh=00_AT9LeJrK_Q1AK1ULb68-rrGR25UkUYAr_NjxPYe73LNU4w&oe=61D7BA0F" />
-  <br></br>
-  <h9>Let's get to work!</h9>
-  <Modal />
+
+
+  return <div> <Typography gutterBottom variant="h2" color="textPrimary" align="center">Hi, I'm Mike.</Typography>
+  <Card>
+  <CardMedia
+        component="img"
+        height="900"
+        width="900"
+        srcSet= {MikeImage}
+        alt="Mike with Wife"
+      />
+    <Typography align="center" gutterBottom variant="h5"> I give bikes new life at my restoration shop in Virginia Beach, VA.</Typography>
+  <Typography align="center" gutterBottom variant="h6">Let's get to work!</Typography></Card>
+  
   </div>;
 };
 

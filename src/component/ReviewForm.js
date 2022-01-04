@@ -1,4 +1,11 @@
-import React from "react";
+import Typography from "@material-ui/core/Typography";
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Card from '@mui/material/Card';
+import * as React from 'react';
+import HoverRating from "./HoverRating"
 
 function ReviewForm({ onAddReview }) {
   
@@ -21,14 +28,15 @@ function handleSubmit(e) {
 
   
   return (
-    <div className="new-review-form">
-      <h2>Add Your Own!</h2>
+    <Card>
+      <Typography>Add Your Own!</Typography>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Add Review" />
         <button type="submit">Add Review</button>
       </form>
-    </div>
+    <HoverRating/>
+   </Card>
   );
 }
 
-export default ReviewForm;
+export default ReviewForm
