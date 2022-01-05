@@ -11,8 +11,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import commerce from "./lib/commerce"
 import CartNav from "./component/CartNav"
 import Cart from "./component/Cart"
-import Checkout from "./pages/Checkout"
-import Confirmation from "./pages/Confirmation"
+import Checkout from "./component/Checkout"
+import Confirmation from "./component/Confirmation"
 import TestRoute from "./component/TestRoute";
 
 const useStyles = makeStyles({});
@@ -149,8 +149,12 @@ export default function App() {
                 onUpdateCartQty={handleUpdateCartQty}
                 onRemoveFromCart={handleRemoveFromCart}
                 onEmptyCart={handleEmptyCart} />} />
-        <Route path="/checkout"
-              element={<Checkout />} />
+        <Route             path="/checkout"
+            
+            element={
+                <Checkout />}/>
+        <Route path="/confirmation"
+              element={<Confirmation />} />
         <Route path="/testroute"
               element={<TestRoute />} />
       </Routes>
