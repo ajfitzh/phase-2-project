@@ -12,30 +12,8 @@ import { autoPlay } from 'react-swipeable-views-utils';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: 'When I picked her up, she was in rough shape.',
-    imgPath:
-      'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/rusted-harley-davidson-motorcycle-art-spectrum.jpg',
-  },
-  {
-    label: 'I had to use my custom-built Chrome-in-ator',
-    imgPath:
-      'https://www.deltatechnicalcollege.com/wp-content/uploads/2018/03/DSC_0336_1.jpg',
-  },
-  {
-    label: 'Added some elbow grease...',
-    imgPath:
-      'https://thumbs.dreamstime.com/z/construction-workers-working-hard-28098648.jpg',
-  },
-  {
-    label: 'Now it looks pretty good!',
-    imgPath:
-      'http://media.techeblog.com/images/concept-motorcycle.jpg',
-  },
-];
 
-function Modal() {
+function Modal({images}) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;

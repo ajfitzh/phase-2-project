@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import {useState} from 'react';
 import PropTypes from "prop-types";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -22,7 +23,36 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Image from "./honda500/pic1.jpg"
 import Modal from "./Modal"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import Button from "@material-ui/core/Button";
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import ShareModal from "./ShareModal"
 
+const images = [
+  {
+    label: 'When I picked her up, she was in rough shape.',
+    imgPath:
+      'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/rusted-harley-davidson-motorcycle-art-spectrum.jpg',
+  },
+  {
+    label: 'I had to use my custom-built Chrome-in-ator',
+    imgPath:
+      'https://www.deltatechnicalcollege.com/wp-content/uploads/2018/03/DSC_0336_1.jpg',
+  },
+  {
+    label: 'Added some elbow grease...',
+    imgPath:
+      'https://thumbs.dreamstime.com/z/construction-workers-working-hard-28098648.jpg',
+  },
+  {
+    label: 'Now it looks pretty good!',
+    imgPath:
+      'http://media.techeblog.com/images/concept-motorcycle.jpg',
+  },
+];
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     "& .MuiDialogContent-root": {
@@ -78,6 +108,8 @@ export default function RecipeReviewCard({bike}) {
   const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [clicked, setClicked] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -85,7 +117,13 @@ export default function RecipeReviewCard({bike}) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const handleClickOpenModal = () => {
+    console.log(openModal)
+    setOpenModal(true);
+  };
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   const handleMediaClick = () => {
       console.log("Clicked!")
       handleClickOpen();
@@ -96,6 +134,13 @@ export default function RecipeReviewCard({bike}) {
   const handleMenuClick = pageURL => {
     setAnchorEl(null);
   };
+  const setClick = (id) => {
+    setClicked(!clicked)
+  }
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
 
   return (
     <Card sx={{ maxWidth: 500 }}>
@@ -106,9 +151,30 @@ export default function RecipeReviewCard({bike}) {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <div>
+        <IconButton
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+       <MoreVertIcon />
+      </IconButton>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Add Stuff</MenuItem>
+        <MenuItem onClick={handleClose}>Sync with account</MenuItem>
+        <MenuItem onClick={handleClose}>Explode Item</MenuItem>
+      </Menu>
+          </div>
         }
         title={bike.projectName}
         subheader={bike.projectDate}
@@ -126,25 +192,44 @@ export default function RecipeReviewCard({bike}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton onClick={setClick} aria-label="add to favorites">
+        {clicked ? <FavoriteIcon sx={{ color: red[500]}} /> : <FavoriteBorderIcon /> }
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <ShareIcon onClick={handleClickOpenModal}/>
         </IconButton>
-        <div>${bike.price}</div>
+                
+                  <ExpandMore>
+                
+                <IconButton>
+  {<AttachMoneyIcon />}
+                <Typography>{bike.price}</Typography>
+  </IconButton>
+              </ExpandMore>
+
+
+
       </CardActions>
       <div>
         <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-      >
-        <DialogContent dividers>
-        <Modal />
+          >
+          <DialogContent dividers>
+          <Modal images={bike.progresspics}/>
+        </DialogContent>
+        </BootstrapDialog>
+         <BootstrapDialog
+          onClose={handleCloseModal}
+          aria-labelledby="customized-dialog-title"
+          open={openModal}
+            >
+          <DialogContent dividers>
+          <ShareModal />
         </DialogContent>
       </BootstrapDialog>
-    </div>
+    </div> 
     </Card>
     
   );

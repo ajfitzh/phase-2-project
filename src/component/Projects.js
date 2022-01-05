@@ -16,7 +16,7 @@ function sortByPrice() {
 function Bikes() {
     const [bikes, setBikes] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:7000/projects")
+        fetch("https://boiling-falls-26905.herokuapp.com/projects")
         .then(resp => resp.json())
         .then(bikes => {
           setBikes(bikes);
@@ -42,25 +42,7 @@ const classes = useStyles();
                        </Grid> 
                     )
                 })}
-            
-            {/* <Grid item xs={12} sm={6} md={4}>
-                <Project />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <Project />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <Project />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <Project />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <Project />
-            </Grid> */}
-            <Grid item xs={12} sm={6} md={4}> 
-            <a classname="fblink" href="https://www.facebook.com/marketplace/profile/100044500240787/?ref=permalink"> Check out our Facebook Marketplace</a>
-            </Grid>
+
             </Grid>
         </>
     )
