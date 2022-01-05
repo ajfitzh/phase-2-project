@@ -1,5 +1,8 @@
 # Redirects from what the browser requests to what we serve
 /home              /
-/blog/my-post.php  /blog/my-post
-/news              /blog
+/about             /about
+/projects          /projects
+/merchandise       /merchandise
+/contact           /contact
+/cart              /cart
 /cuties            https://www.petsofnetlify.com

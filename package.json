@@ -33,6 +33,7 @@
     "react-native": "^0.61.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
+    "react-stripe-checkout": "^2.6.3",
     "react-swipeable-views": "^0.14.0",
     "recompose": "^0.17.0",
     "string-strip-html": "^9.1.4",

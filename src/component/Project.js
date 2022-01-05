@@ -77,6 +77,7 @@ const ExpandMore = styled((props) => {
 export default function RecipeReviewCard({bike}) {
   const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -89,6 +90,12 @@ export default function RecipeReviewCard({bike}) {
       console.log("Clicked!")
       handleClickOpen();
   }
+  const handleMenu = event => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClick = pageURL => {
+    setAnchorEl(null);
+  };
 
   return (
     <Card sx={{ maxWidth: 500 }}>
