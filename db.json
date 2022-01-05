@@ -1,0 +1,44 @@
+{
+    "projects" : [
+    {
+        "projectImg" : "",
+        "projectName" : "Triumph Restoration",
+        "projectDate" : "April 2019",
+        "bikeName" : "Triumph Bonneville",
+        "beforeImg" : "https://images.squarespace-cdn.com/content/v1/56fa79a3c2ea517dbfcda3ee/1555957185443-0F2U80OJ4HA9LFK555EQ/DIY+Motorcycle+Restoration+Tips?format=1000w",
+        "afterImg" : "https://images.squarespace-cdn.com/content/v1/56fa79a3c2ea517dbfcda3ee/1555959626378-CL2M7NIU29VZJ6OOLIZB/DIY+Motorcycle+Restoration+Tips?format=1000w",
+        "price" : 1500,
+        "description" : "This bike really just needed a good wash and a lot of polishing. It turned out looking brand new."
+    },
+    {
+        "projectImg" : "",
+        "projectName" : "Honda 500 Project",
+        "projectDate" : "June-July 2021",
+        "bikeName" : "1981 Honda gl500",
+        "beforeImg" : "https://i.ytimg.com/vi/w5ovmVjhXsA/sddefault.jpg",
+        "afterImg" : "http://gl500.cutler.ws/wp-content/uploads/2017/05/DSC_8690cleanedUp.jpg",
+        "price" : 500,
+        "description" : "When I first got this bike, it was in overall good condition missing only a few needed parts to make complete."
+    },
+    {
+        "projectImg" : "",
+        "projectName" : "BSA Lightning Project",
+        "projectDate" : "August 2019",
+        "bikeName" : "BSA A65 Lightning",
+        "beforeImg" : "https://motorcyclehabit.com/wp-content/uploads/2019/05/Sitting-2-Large.jpg",
+        "afterImg" : "https://motorcycles-for-sale.biz/img/motorcyclephoto/full/motorbike428691.jpg",
+        "price" : 250,
+        "description" : "I just needed to restore the headlight and replace a few parts on this one"
+    },
+    {
+        "projectImg" : "",
+        "projectName" : "Norman Restoration",
+        "projectDate" : "June 2020",
+        "bikeName" : "1952 Norman 197cc",
+        "beforeImg" : "https://apigateway.agilitypr.com/api/v1/images/923786ab-2bb8-4572-9268-31c14e682d6d",
+        "afterImg" : "https://images1.bonhams.com/image?src=Images/live/2006-10/10/7334294-7-1.jpg&width=640&height=480&autosizefit=1",
+        "price" : 350,
+        "description" : "This bike was really fun to restore, and I think it turned out great."
+    }   
+    ]
+}

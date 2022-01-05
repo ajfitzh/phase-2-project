@@ -74,7 +74,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({bike}) {
   const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
@@ -103,20 +103,19 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Honda 500 Project"
-        subheader="June-July 2021"
+        title={bike.projectName}
+        subheader={bike.projectDate}
       />
       <CardMedia
         component="img"
         height="194"
-        image= {Image}
+        image= {bike.afterImg}
         alt="Before Picture"
         onClick={handleMediaClick}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-        1981 Honda gl500 - $500  non-running condition. 
-        When I first got this bike, it was in overall good condition missing only a few needed parts to make complete.
+        {bike.bikeName} - ${bike.price}  {bike.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -126,6 +125,7 @@ export default function RecipeReviewCard() {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
+        <div>${bike.price}</div>
       </CardActions>
       <div>
         <BootstrapDialog
