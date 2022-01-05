@@ -11,7 +11,8 @@ import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useNavigate } from "react-router-dom";
 import logo from "./assets/logo.png"
-
+import { Badge, CardActionArea } from "@mui/material";
+import CartNav from "./CartNav"
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -31,13 +32,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Header = props => {
+const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}) => {
   const navigate = useNavigate();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+
+    let number={cart}
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -68,7 +71,11 @@ const Header = props => {
     {
         menuTitle: "Projects",
         pageURL: "/projects"
-    }
+    },
+    {
+      menuTitle: "Merch",
+      pageURL: "/merchandise"
+  }  
   ];
 
   return (
@@ -76,11 +83,12 @@ const Header = props => {
       <AppBar position="static">
         <Toolbar>
           <img height="50vw" width="50vw" src={logo} />
-          <Typography variant="h8" className={classes.title}>
+          <Typography variant="h6" className={classes.title}>
             
           </Typography>
           {isMobile ? (
             <>
+            <Badge badgeContent={4} color="secondary">
               <IconButton
                 edge="start"
                 className={classes.menuButton}
@@ -90,6 +98,7 @@ const Header = props => {
               >
                 <MenuIcon />
               </IconButton>
+            </Badge>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -137,9 +146,22 @@ const Header = props => {
               </Button>
               <Button
                 variant="contained"
+                onClick={() => handleButtonClick("/merchandise")}
+              >
+                MERCH
+              </Button>
+              <Button
+                variant="contained"
                 onClick={() => handleButtonClick("/contact")}
               >
                 CONTACT
+              </Button>
+              <Button>
+              <CartNav         
+              cart={cart}
+              onUpdateCartQty={handleUpdateCartQty}
+              onRemoveFromCart={handleRemoveFromCart}
+              onEmptyCart={handleEmptyCart} />
               </Button>
             </div>
           )}
