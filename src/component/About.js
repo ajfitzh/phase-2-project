@@ -52,10 +52,13 @@ const About = props => {
       function Item(props)
 {
     return (
-        <Paper>
-            <p>{props.item.name}</p>
-            <img width="60%" height="400vw" src={props.item.imageURL}/>
-        </Paper>
+        <Card>
+            <CardMedia
+        component="img"
+        srcSet= {props.item.imageURL}
+        alt={props.item.name}
+            />
+        </Card>
     )
 }
     return (

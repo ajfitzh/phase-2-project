@@ -10,6 +10,8 @@ import { Grid } from "@material-ui/core"
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Avatar from '@mui/material/Avatar';
+import EmailIcon from '@mui/icons-material/Email';
+
 
 const Contact = props => {
   
@@ -37,24 +39,22 @@ const Contact = props => {
     <LinkedInIcon color="primary" />
     </a>
   </IconButton>
+  <IconButton>
+  <a href="mailto:austin.j.fitzhugh@gmail.com">
+  <EmailIcon/>  
+  </a>
+  </IconButton>
   </Grid>
   <Typography align="center" gutterBottom variant="h4">Want a Custom Bike? </Typography>
+
   <Grid container justifyContent="center">
-   <Button onClick={() => {
-    alert('clicked');
-  }} align="center" variant="contained" color="primary" endIcon={<LocalPhoneIcon/>}>Call Mike!</Button>
+    <a href="tel:~15408093106">
+   <Button align="center" variant="contained" color="primary" endIcon={<LocalPhoneIcon/>}>Call Mike!</Button>
+   </a>
    </Grid>
-  <iframe 
-    title="googleform" 
-    src="https://docs.google.com/forms/d/e/1FAIpQLScjHK8JTkluNOYGscSkHq9T1A-kZ_DsdHWIgeNPJN-kd6sVmg/viewform?embedded=true" 
-    height="800vw"
-    width="100%"
-    frameBorder="0" 
-    marginHeight="0" 
-    marginWidth="10">Loading…</iframe>
-  </div>
 
 
+</div>
   )};
 
 export default Contact;

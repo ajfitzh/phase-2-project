@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import MikeImage from "./assets/mikewife.jpg"
-
+import Logo from "./assets/logo.png"
 
 
 
@@ -16,16 +16,20 @@ import MikeImage from "./assets/mikewife.jpg"
 const Home = props => {
 
 
-  return <div> <Typography gutterBottom variant="h2" color="textPrimary" align="center">Hi, I'm Mike.</Typography>
-  <Card>
+  return <div> 
+  <Card>    
+      <Typography gutterBottom variant="h2" color="textPrimary" align="center">Hi, I'm Mike.</Typography>
   <CardMedia
         component="img"
-        height="900"
-        width="900"
         srcSet= {MikeImage}
         alt="Mike with Wife"
       />
     <Typography align="center" gutterBottom variant="h5"> I give bikes new life at my restoration shop in Virginia Beach, VA.</Typography>
+    <CardMedia
+      component="img"
+      srcSet= {Logo}
+      alt="Mike's Bikes Logo"
+      />
   <Typography align="center" gutterBottom variant="h6">Let's get to work!</Typography></Card>
   
   </div>;
