@@ -10,15 +10,21 @@ import { Route, Routes } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import commerce from "./lib/commerce"
 import CartNav from "./component/CartNav"
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingBag, faTimes } from '@fortawesome/free-solid-svg-icons'
+import Cart from "./component/Cart"
+import Checkout from "./pages/Checkout"
+import Confirmation from "./pages/Confirmation"
+import TestRoute from "./component/TestRoute";
 
 const useStyles = makeStyles({});
+
+
 
 export default function App() {
   const [merchant, setMerchant] = useState({});
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({})
+
+  
 
    // Because React rendering can be triggered for many different reasons, 
   // it is best practice to wrap our commerce object method calls into a 
@@ -126,16 +132,27 @@ export default function App() {
   return (
     <div className={classes.container}>
       <Navbar 
-        cart={cart}        
-        onUpdateCartQty={handleUpdateCartQty}
-        onRemoveFromCart={handleRemoveFromCart}
-        onEmptyCart={handleEmptyCart}/>
+        cart={cart}        />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />}  />
         <Route path="/about" element={<About />}  />
         <Route path="/projects" element={<Projects />}  />
         <Route path="/merchandise" element={<ProductsList products={products} onAddToCart={handleAddToCart}/>} />
+        <Route path="/cartnav" element={<CartNav                cart={cart}
+              onUpdateCartQty={handleUpdateCartQty}
+              onRemoveFromCart={handleRemoveFromCart}
+              onEmptyCart={handleEmptyCart} />} />
+        <Route path="/cart" 
+              element={<Cart
+                cart={cart}
+                onUpdateCartQty={handleUpdateCartQty}
+                onRemoveFromCart={handleRemoveFromCart}
+                onEmptyCart={handleEmptyCart} />} />
+        <Route path="/checkout"
+              element={<Checkout />} />
+        <Route path="/testroute"
+              element={<TestRoute />} />
       </Routes>
     </div>
   );

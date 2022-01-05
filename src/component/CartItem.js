@@ -1,6 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import PropTypes from "prop-types";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Typography from "@mui/material/Typography";
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import Avatar from '@mui/material/Avatar';
+import { green } from '@mui/material/colors';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Image from "./honda500/pic1.jpg"
+import Modal from "./Modal"
+import { stripHtml } from 'string-strip-html';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
 
@@ -14,28 +40,50 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
 
 
 	return (
-		<div className="cart-item">
-			<img className="cart-item__image" src={item.image.url} alt={item.name} />
-			<div className="cart-item__details">
-				<h4 className="cart-item__details-name">{item.name}</h4>
-				<div className="cart-item__details-qty">
-						<button type="button" onClick={() => item.quantity > 1 ? handleUpdateCartQty(item.id, item.quantity - 1) : handleRemoveFromCart()}>-</button>
-						<p>{item.quantity}</p>
-						<button type="button" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</button>
-				</div>
-				<div className="cart-item__details-price">{item.line_total.formatted_with_symbol}</div>
-			</div>
-			<button
-				type="button"
-				className="cart-item__remove"
-				onClick={handleRemoveFromCart}
-			>
-				Remove
-			</button>
-		</div>
+    <Card sx={{ maxWidth: 500 }}>
+    <CardHeader
+      avatar={
+        <Avatar sx={{ bgcolor: green[100] }} aria-label="recipe">
+          mkt
+        </Avatar>
+      }
+      action={
+        <IconButton aria-label="settings">
+          <MoreVertIcon />
+        </IconButton>
+      }
+      title={item.name}
+      subheader=""
+    />
+    <CardMedia
+      component="img"
+      height="194"
+      image= {item.image.url}
+      alt={item.name}
+    />
+    <CardContent>
+      <Typography variant="body2" color="text.secondary">
+      ""
+      </Typography>
+      <Typography>
+        Total Price: {item.line_total.formatted_with_symbol}
+      </Typography>
+    </CardContent>
+    <CardActions disableSpacing>
+      <IconButton aria-label="share">
+        <AddIcon onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}/>
+      </IconButton> 
+      <Avatar>{item.quantity}</Avatar>
+     <IconButton aria-label="add to favorites">
+        <RemoveIcon onClick={() => item.quantity > 1 ? handleUpdateCartQty(item.id, item.quantity - 1) : handleRemoveFromCart()}/>
+      </IconButton>
+      <IconButton>
+      <DeleteIcon onClick={handleRemoveFromCart}/>
+      </IconButton>
+    </CardActions>
+    </Card>
 	);
 };
-
 export default CartItem;
 
 CartItem.propTypes = {

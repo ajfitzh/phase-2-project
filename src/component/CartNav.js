@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faShoppingBag, faTimes } from '@fortawesome/free-solid-svg-icons'
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge, CardActionArea } from "@mui/material";
 
 library.add(faShoppingBag, faTimes);
 
@@ -19,12 +20,13 @@ const CartNav = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
             <div className="nav__cart" onClick={() => setCartVisible(!isCartVisible)}>
                 {!isCartVisible ? (
                 <button className="nav__cart-open">
-                    <FontAwesomeIcon size="2x" icon="shopping-bag" color="#292B83"/>
-                    {cart !== null ? <span>{cart.total_items}</span> : ''}
+                 <Badge badgeContent={cart.total_items} color="secondary">
+                    <ShoppingCartIcon size="2x" icon="shopping-bag" color="#292B83"/>
+                    </Badge>
                 </button>
                 ) : (
                     <button className="nav__cart-close">
-                    <FontAwesomeIcon size="1x" icon="times" color="white"/>
+                    <ShoppingCartIcon size="1x" icon="times" color="white"/>
                     </button>
                 )}
             </div>

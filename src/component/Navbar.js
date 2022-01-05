@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import logo from "./assets/logo.png"
 import { Badge, CardActionArea } from "@mui/material";
 import CartNav from "./CartNav"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -32,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}) => {
+const Header = ({cart}) => {
   const navigate = useNavigate();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -40,7 +42,7 @@ const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
-    let number={cart}
+
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -75,7 +77,11 @@ const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
     {
       menuTitle: "Merch",
       pageURL: "/merchandise"
-  }  
+  },
+  {
+    menuTitle: "Cart",
+    pageURL: "/cart"
+} 
   ];
 
   return (
@@ -88,7 +94,7 @@ const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
           </Typography>
           {isMobile ? (
             <>
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={cart.total_items} overlap="circular" color="success">
               <IconButton
                 edge="start"
                 className={classes.menuButton}
@@ -156,13 +162,15 @@ const Header = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
               >
                 CONTACT
               </Button>
-              <Button>
-              <CartNav         
-              cart={cart}
-              onUpdateCartQty={handleUpdateCartQty}
-              onRemoveFromCart={handleRemoveFromCart}
-              onEmptyCart={handleEmptyCart} />
+              <Badge badgeContent={cart.total_items} overlap="circular" color="success">
+              <Button
+                endIcon={<ShoppingCartIcon />}
+                variant="contained"
+                onClick={() => handleButtonClick("/cart")}
+              >
+                MY CART
               </Button>
+              </Badge>
             </div>
           )}
         </Toolbar>
