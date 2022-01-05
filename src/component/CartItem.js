@@ -70,15 +70,15 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
       </Typography>
     </CardContent>
     <CardActions disableSpacing>
-      <IconButton aria-label="share">
-        <AddIcon onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}/>
+      <IconButton onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)} aria-label="share">
+        <AddIcon />
       </IconButton> 
       <Avatar>{item.quantity}</Avatar>
-     <IconButton aria-label="add to favorites">
-        <RemoveIcon onClick={() => item.quantity > 1 ? handleUpdateCartQty(item.id, item.quantity - 1) : handleRemoveFromCart()}/>
+     <IconButton aria-label="add to favorites" onClick={() => item.quantity > 1 ? handleUpdateCartQty(item.id, item.quantity - 1) : handleRemoveFromCart()}>
+        <RemoveIcon />
       </IconButton>
-      <IconButton>
-      <DeleteIcon onClick={handleRemoveFromCart}/>
+      <IconButton onClick={handleRemoveFromCart}>
+      <DeleteIcon />
       </IconButton>
     </CardActions>
     </Card>

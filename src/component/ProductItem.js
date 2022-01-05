@@ -145,7 +145,7 @@ const ProductItem = ({ product, onAddToCart }) => {
       >
         <MenuItem onClick={handleClose}>Add Stuff</MenuItem>
         <MenuItem onClick={handleClose}>Sync with account</MenuItem>
-        <MenuItem onClick={handleClose}>Explode</MenuItem>
+        <MenuItem onClick={handleClose}>Explode Item</MenuItem>
       </Menu>
           </div>
         }
