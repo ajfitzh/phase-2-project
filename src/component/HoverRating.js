@@ -58,9 +58,11 @@ export default function HoverRating({onAddReview}) {
     <Card align="center">
       <Typography>Worked with Mike? Submit a Review!</Typography>
       <TextField onChange={e => setReviewText(e.target.value)} id="standard-basic" label="Type here..." variant="standard" />
+    <Button color="primary" variant="contained" onClick={handleSubmit}> Submit Review</Button>
+    
     <Box
       sx={{
-        width: 200,
+        width: 320,
         display: 'flex',
         alignitems: 'center',
       }}>
@@ -77,10 +79,10 @@ export default function HoverRating({onAddReview}) {
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
       {value !== null && (
-        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+        <Box sx={{ ml: 7 }}>{labels[hover !== -1 ? hover : value]}</Box>
       )}
     </Box> 
-    <Button align="center" color="primary" variant="contained" onClick={handleSubmit}> Submit Review</Button>
+    
     </Card>
   );
 }
