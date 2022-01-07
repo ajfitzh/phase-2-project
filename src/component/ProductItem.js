@@ -143,9 +143,9 @@ const ProductItem = ({ product, onAddToCart }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Add Stuff</MenuItem>
+        <MenuItem onClick={handleClose}>Test It Out!</MenuItem>
         <MenuItem onClick={handleClose}>Sync with account</MenuItem>
-        <MenuItem onClick={handleClose}>Explode Item</MenuItem>
+        <MenuItem onClick={handleClose}>Explode</MenuItem>
       </Menu>
           </div>
         }
@@ -175,9 +175,11 @@ const ProductItem = ({ product, onAddToCart }) => {
         <IconButton aria-label="share">
           <ShareIcon onClick={handleClickOpenModal}/>
         </IconButton>
-        <IconButton>
+        <ExpandMore>
+         <IconButton>
         <AddShoppingCartIcon onClick={handleAddToCart}/>
-        </IconButton>
+        </IconButton> 
+      </ExpandMore>
       </CardActions>
       <div>
         <BootstrapDialog

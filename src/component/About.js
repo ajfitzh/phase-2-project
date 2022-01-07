@@ -27,12 +27,16 @@ const useStyles = makeStyles({
 var items = [
     {
         name: "Garage",
-        imageURL: "https://www.familyhandyman.com/wp-content/uploads/2017/06/FH06SEP_MOTORC_01-2.jpg"
+        imageURL: "https://i.imgur.com/bEQ0IHl.jpeg"
     },
     {
-        name: "At a convention!",
-        imageURL: "http://ridermagazine.com/wp-content/uploads/2018/07/LEADIMG_3598.jpg"
-    }
+        name: "My next project!",
+        imageURL: "https://i.imgur.com/Wl9WbMX.jpeg"
+    },
+    {
+        name: "Nice and dry inside.",
+        imageURL: "https://i.imgur.com/EWcT7F4.jpeg"
+    },
 ]
 
 const About = props => {
@@ -79,6 +83,7 @@ const About = props => {
            <Grid container container spacing={2}>
            {reviews.map(review => <Review key={review.id} review={review}/>)} 
             </Grid>
+            <br></br>
             <ReviewForm onAddReview={onAddReview}/>
         </div>    
     )

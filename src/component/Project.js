@@ -31,6 +31,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import ShareModal from "./ShareModal"
 
+
 const images = [
   {
     label: 'When I picked her up, she was in rough shape.',
@@ -156,6 +157,7 @@ export default function RecipeReviewCard({bike}) {
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
+        open={open}
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
@@ -187,9 +189,11 @@ export default function RecipeReviewCard({bike}) {
         onClick={handleMediaClick}
       />
       <CardContent>
+        <a href={bike.link}>
         <Typography variant="body2" color="text.secondary">
         {bike.bikeName} - ${bike.price}  {bike.description}
         </Typography>
+        </a>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton onClick={setClick} aria-label="add to favorites">
@@ -200,11 +204,12 @@ export default function RecipeReviewCard({bike}) {
         </IconButton>
                 
                   <ExpandMore>
-                
+                <a href="https://buy.stripe.com/test_8wM29ugCogxt1nW9AB">
                 <IconButton>
   {<AttachMoneyIcon />}
                 <Typography>{bike.price}</Typography>
   </IconButton>
+  </a>
               </ExpandMore>
 
 
